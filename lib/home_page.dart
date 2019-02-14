@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'crime_page.dart';
 
 class HomePage extends StatefulWidget {
   
@@ -9,7 +10,7 @@ class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
-
+// Drawer: https://medium.com/@kashifmin/flutter-setting-up-a-navigation-drawer-with-multiple-fragments-widgets-1914fda3c8a8
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
@@ -35,10 +36,10 @@ class _HomePageState extends State<HomePage> {
               title: Text('犯罪統計'),
               onTap: () {
                 // Update the state of the app
-                // ...
+                Navigator.push(context, new MaterialPageRoute(builder: (context) => CrimePage(title: '犯罪統計')));
                 // Then close the drawer
                 Navigator.pop(context);
-              },
+              },  
             ),
             ListTile(
               title: Text('Item 2'),
